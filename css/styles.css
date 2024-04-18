@@ -3,9 +3,8 @@
     src: url("/October.ttf");
 }
 
-
 body {
-    background-color: #ea1a21;
+    background-color: #D70A24;
     font-family: "October";
     margin: 0;
     padding: 0;
@@ -30,12 +29,12 @@ body {
     padding: 5px 10px;
     border-radius: 5px;
     background-color: #fffbdd;
-    transition: background-color 0.3s ease; /* Tilføj overgangseffekt */
+    transition: background-color 0.3s ease;
     margin-right: 15px;
 }
 
 .menu-btn:active {
-    background-color: transparent; /* Gør baggrundsfarven gennemsigtig, når knappen er trykket ned */
+    background-color: transparent;
 }
 
 .navbar {
@@ -47,14 +46,14 @@ body {
     padding: 20px;
     z-index: 3;
     border-radius: 10px;
-    opacity: 0; /* Gør menuen usynlig som standard */
-    visibility: hidden; /* Skjul menuen uden at tage plads på siden */
-    transition: opacity 0.3s ease, visibility 0.3s ease; /* Tilføj overgangseffekt */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
 .navbar.active {
-    opacity: 1; /* Gør menuen synlig */
-    visibility: visible; /* Gør menuen synlig */
+    opacity: 1;
+    visibility: visible;
 }
 
 .navbar ul {
@@ -75,7 +74,7 @@ body {
 }
 
 .navbar ul li a:hover {
-    color: #ff0000;
+    color: #D70A24;
 }
 
 .hero-section {
@@ -125,11 +124,126 @@ body {
     position: fixed;
     bottom: 0;
     width: 100%;
-    color: #fffbdd; /* Hvid tekstfarve */
-    padding: 3px 0; /* Indvendig polstring for footer */
-    text-align: center; /* Justering af tekst til midten */
-    font-size: 12px; /* Juster tekststørrelse efter behov */
+    color: #fffbdd;
+    padding: 3px 0;
+    text-align: center;
+    font-size: 12px;
     border-radius: 3px;
 }
 
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
+.pizza-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.pizza-item {
+    background-color: #fffbdd;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    margin: 20px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.pizza-info {
+    flex: 1;
+}
+
+.pizza-info img {
+    max-width: 100px;
+    height: auto;
+    border-radius: 10px;
+}
+
+.description {
+    font-size: 14px;
+    color: #666;
+}
+
+.quantity {
+    display: flex;
+    align-items: center;
+}
+
+.quantity button {
+    width: 30px; /* Sæt bredden til det ønskede mål */
+    height: 30px; /* Sæt højden til det ønskede mål */
+    background-color: #D70A24; /* Sæt baggrundsfarven til standardfarven */
+    border: none; /* Fjern kantlinjen */
+    border-radius: 0; /* Fjern afrundede hjørner */
+    color: black;
+}
+
+.quantity input {
+    font-size: 16px;
+    width: 50px;
+    text-align: center;
+    border: 1px solid #D70A24;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 0 10px;
+}
+
+
+
+.order-section {
+    margin-top: 50px;
+    text-align: center;
+}
+
+.order-btnpizza {
+    font-size: 18px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.order-btnpizza:hover {
+    background-color: #45a049;
+}
+
+.discount-code {
+    margin-top: 20px;
+}
+
+.discount-code input {
+    font-size: 16px;
+    width: 200px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.discount-code button {
+    font-size: 18px;
+    background-color: #861aa1;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.discount-code button:hover {
+    background-color: #41a833;
+}
+
+/* Tilføjet styling til logo */
+.logo img {
+    max-width: 85px;
+    height: auto;
+    margin-left: 15px;
+}

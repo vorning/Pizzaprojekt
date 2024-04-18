@@ -3,35 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bestillings side</title>
-    <link rel="stylesheet" href="css/styles.css"> <!-- Hvis du har en CSS-fil -->
+    <title>Se forskellige pizzaer</title>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
-    <header>
-        <div class="menu-bar">
-            <div class="menu-btn" onclick="toggleMenu()">&#9776;</div>
-            <nav class="navbar" id="navbar">
-                <ul>
-                    <li><a href="index.html">Hjem</a></li>
-                    <li><a href="#">Konto</a></li>
-                    <li><a href="#">Menu</a></li>
-                    <li><a href="#">Om os</a></li>
-                    <li><a href="#">Kontakt</a></li>
-                </ul>
-            </nav>
+<header>
+    <div class="menu-bar">
+        <div class="menu-btn" onclick="toggleMenu()">&#9776;</div>
+        <nav class="navbar" id="navbar">
+            <ul>
+                <li><a href="index.html">Hjem</a></li>
+                <li><a href="#">Konto</a></li>
+                <li><a href="#">Menu</a></li>
+                <li><a href="#">Om os</a></li>
+                <li><a href="#">Kontakt</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="logo">
+        <img src="/img/logo.png" alt="Logo">
+    </div>
+</header>
+
+<div class="container">
+    <div class="pizza-list">
+        <!-- Pizza 1 -->
+        <div class="pizza-item">
+            <div class="pizza-info">
+                <img src="/img/pizza1.png" alt="Pizza">
+                <p class="description">Beskrivelse af pizzaen</p>
+            </div>
+            <div class="quantity">
+                <button onclick="decreaseQuantity(1)">-</button>
+                <input type="text" value="0" id="quantity1">
+                <button onclick="increaseQuantity(1)">+</button>
+            </div>
         </div>
-    </header>
 
-<main>
-    <!-- Dit indhold her -->
-</main>
+        <!-- Pizza 2 -->
+        <div class="pizza-item">
+            <div class="pizza-info">
+                <img src="/img/pizza2.png" alt="Pizza">
+                <p class="description">Beskrivelse af pizzaen</p>
+            </div>
+            <div class="quantity">
+                <button onclick="decreaseQuantity(2)">-</button>
+                <input type="text" value="0" id="quantity2">
+                <button onclick="increaseQuantity(2)">+</button>
+            </div>
+        </div>
 
-<footer>
-    <!-- Dit footer-indhold her -->
+        <!-- Tilføj flere pizzaer her -->
+    </div>
+
+    <div class="order-section">
+        <h2>Din ordre</h2>
+        <div class="order-details">
+            <!-- Her vises detaljer om ordren, f.eks. navn på pizza, antal, pris osv. -->
+        </div>
+        <div class="discount-code">
+            <input type="text" placeholder="Indtast rabatkode">
+            <button onclick="applyDiscount()">Anvend</button>
+        </div>
+        <button class="order-btnpizza" onclick="placeOrder()">Bestil</button>
+    </div>
+</div>
+
+<footer class="footer">
+    <div class="contact-info">
+        <p>Telefon: 12345678</p>
+        <p>Email: info@example.com</p>
+        <p>Adresse: 123 Pizza Street, Pizza Town</p>
+        <p>Åbningstider: Mandag til lørdag kl. 10-22</p>
+    </div>
 </footer>
 
 <script src="js/script.js"></script>
-
+<script src="js/order.js"></script>
 </body>
 </html>
