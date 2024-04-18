@@ -1,17 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>My Website</title>
-    <link rel="stylesheet" href="./style.css">
-    <link rel="icon" href="./favicon.ico" type="image/x-icon">
-  </head>
-  <body>
-    <main>
-        <h1>Velkommen til vores hjemmeside 123</h1>  
-    </main>
-	<script src="index.js"></script>
-  </body>
+    <title>Pizza Pizzeria</title>
+    <link href="https://db.onlinewebfonts.com/c/c020adb2187fcfabcfc64f60feee1d8e?family=October+Compressed+H%2BL+Heavy" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<header>
+    <div class="menu-bar">
+        <div class="menu-btn" onclick="toggleMenu()">&#9776;</div>
+        <nav class="navbar" id="navbar">
+            <ul>
+                <li><a href="#">Konto</a></li>
+                <li><a href="#">Menu</a></li>
+                <li><a href="#">Om os</a></li>
+                <li><a href="#">Kontakt</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<div class="hero-section">
+    <img src="img/baggrund.png" alt="Billede">
+</div>
+
+<div class="order-btn">
+    <button>Bestil Pizza</button>
+</div>
+
+<script src="js/script.js"></script>
+</body>
 </html>

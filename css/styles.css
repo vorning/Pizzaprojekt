@@ -1,0 +1,116 @@
+
+
+body {
+    background-color: #ea1a21;
+    font-family: "October Compressed H+L Heavy";
+    margin: 0;
+    padding: 0;
+}
+h1 {
+    font-family: "October Compressed H+L Heavy";
+}
+
+.menu-bar {
+    display: flex;
+    justify-content: flex-end;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 10px 20px;
+    z-index: 3;
+    font-family: "October Compressed H+L Heavy";
+}
+
+.menu-btn {
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 4;
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: #fffbdd;
+}
+
+.menu-btn.active {
+    background-color: transparent;
+}
+
+.navbar {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #fffbdd;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    z-index: 3;
+    border-radius: 10px;
+}
+
+.navbar.active {
+    display: block;
+}
+
+.navbar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar ul li {
+    margin-bottom: 10px;
+    margin-top: 25px;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: #000000;
+    transition: color 0.3s ease;
+    font-family: "October Compressed H+L Heavy";
+}
+
+.navbar ul li a:hover {
+    color: #ff0000;
+}
+
+.hero-section {
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+
+.hero-section img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    z-index: 1;
+}
+
+.order-btn {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    width: 200px;
+    margin-bottom: 100px;
+}
+
+.order-btn button {
+    font-size: 30px;
+    padding: 20px 50px;
+    background-color: #fffbdd;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    color: black;
+    box-shadow: 10px 5px 5px black;
+    font-family: "October Compressed H+L Heavy";
+}
+
+.order-btn button:hover {
+    background-color: #fffbdd;
+}
+
