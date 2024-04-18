@@ -1,13 +1,14 @@
+@font-face {
+    font-family: "October";
+    src: url("/October.ttf");
+}
 
 
 body {
     background-color: #ea1a21;
-    font-family: "October Compressed H+L Heavy";
+    font-family: "October";
     margin: 0;
     padding: 0;
-}
-h1 {
-    font-family: "October Compressed H+L Heavy";
 }
 
 .menu-bar {
@@ -65,7 +66,7 @@ h1 {
     text-decoration: none;
     color: #000000;
     transition: color 0.3s ease;
-    font-family: "October Compressed H+L Heavy";
+    font-family: "October";
 }
 
 .navbar ul li a:hover {
@@ -107,10 +108,12 @@ h1 {
     transition: background-color 0.3s ease;
     color: black;
     box-shadow: 10px 5px 5px black;
-    font-family: "October Compressed H+L Heavy";
+    font-family: "October";
 }
 
 .order-btn button:hover {
     background-color: #fffbdd;
 }
+
+
 
