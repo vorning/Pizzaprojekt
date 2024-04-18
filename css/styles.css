@@ -20,6 +20,7 @@ body {
     padding: 10px 20px;
     z-index: 3;
     font-family: "October Compressed H+L Heavy";
+    position: fixed;
 }
 
 .menu-btn {
@@ -29,14 +30,15 @@ body {
     padding: 5px 10px;
     border-radius: 5px;
     background-color: #fffbdd;
+    transition: background-color 0.3s ease; /* Tilføj overgangseffekt */
+    margin-right: 15px;
 }
 
-.menu-btn.active {
-    background-color: transparent;
+.menu-btn:active {
+    background-color: transparent; /* Gør baggrundsfarven gennemsigtig, når knappen er trykket ned */
 }
 
 .navbar {
-    display: none;
     position: absolute;
     top: 0;
     right: 0;
@@ -45,10 +47,14 @@ body {
     padding: 20px;
     z-index: 3;
     border-radius: 10px;
+    opacity: 0; /* Gør menuen usynlig som standard */
+    visibility: hidden; /* Skjul menuen uden at tage plads på siden */
+    transition: opacity 0.3s ease, visibility 0.3s ease; /* Tilføj overgangseffekt */
 }
 
 .navbar.active {
-    display: block;
+    opacity: 1; /* Gør menuen synlig */
+    visibility: visible; /* Gør menuen synlig */
 }
 
 .navbar ul {
@@ -58,8 +64,7 @@ body {
 }
 
 .navbar ul li {
-    margin-bottom: 10px;
-    margin-top: 25px;
+    margin-top: 23px;
 }
 
 .navbar ul li a {
@@ -77,6 +82,7 @@ body {
     position: relative;
     width: 100%;
     height: auto;
+    position: fixed;
 }
 
 .hero-section img {
@@ -90,7 +96,7 @@ body {
 
 .order-btn {
     position: fixed;
-    bottom: 20px;
+    bottom: 58px;
     left: 50%;
     transform: translateX(-50%);
     text-align: center;
@@ -107,7 +113,7 @@ body {
     cursor: pointer;
     transition: background-color 0.3s ease;
     color: black;
-    box-shadow: 10px 5px 5px black;
+    box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.8);
     font-family: "October";
 }
 
@@ -115,5 +121,15 @@ body {
     background-color: #fffbdd;
 }
 
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    color: #fffbdd; /* Hvid tekstfarve */
+    padding: 3px 0; /* Indvendig polstring for footer */
+    text-align: center; /* Justering af tekst til midten */
+    font-size: 12px; /* Juster tekststørrelse efter behov */
+    border-radius: 3px;
+}
 
 
