@@ -4,7 +4,7 @@
 }
 
 body {
-    background-color: #D70A24;
+    background-color: #B81328;
     font-family: "October";
     margin: 0;
     padding: 0;
@@ -74,10 +74,13 @@ body {
 }
 
 .navbar ul li a:hover {
-    color: #D70A24;
+    color: #B81328;
 }
 
 .hero-section {
+    display: flex; /* Gør .hero-section til en flex container */
+    justify-content: center; /* Centrer indholdet vandret */
+    align-items: center; /* Centrer indholdet lodret */
     position: relative;
     width: 100%;
     height: auto;
@@ -85,13 +88,14 @@ body {
 }
 
 .hero-section img {
-    position: absolute;
-    top: 0;
-    left: 0;
+    /* Fjern tidligere positionering */
     width: 100%;
+    max-width: 600px; /* Tilføjet maksimal bredde */
     height: auto;
     z-index: 1;
 }
+
+
 
 .order-btn {
     position: fixed;
@@ -131,119 +135,61 @@ body {
     border-radius: 3px;
 }
 
-.container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.pizza-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.pizza-item {
-    background-color: #fffbdd;
-    border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-    margin: 20px;
-    padding: 20px;
-    display: flex;
-    align-items: center;
-}
-
-.pizza-info {
-    flex: 1;
-}
-
-.pizza-info img {
-    max-width: 100px;
-    height: auto;
-    border-radius: 10px;
-}
-
-.description {
-    font-size: 14px;
-    color: #666;
-}
-
-.quantity {
-    display: flex;
-    align-items: center;
-}
-
-.quantity button {
-    width: 30px; /* Sæt bredden til det ønskede mål */
-    height: 30px; /* Sæt højden til det ønskede mål */
-    background-color: #D70A24; /* Sæt baggrundsfarven til standardfarven */
-    border: none; /* Fjern kantlinjen */
-    border-radius: 0; /* Fjern afrundede hjørner */
-    color: black;
-}
-
-.quantity input {
-    font-size: 16px;
-    width: 50px;
-    text-align: center;
-    border: 1px solid #D70A24;
-    border-radius: 5px;
-    padding: 5px;
-    margin: 0 10px;
-}
-
-
-
-.order-section {
-    margin-top: 50px;
-    text-align: center;
-}
-
-.order-btnpizza {
-    font-size: 18px;
-    background-color: #4CAF50;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.order-btnpizza:hover {
-    background-color: #45a049;
-}
-
-.discount-code {
-    margin-top: 20px;
-}
-
-.discount-code input {
-    font-size: 16px;
-    width: 200px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-.discount-code button {
-    font-size: 18px;
-    background-color: #861aa1;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.discount-code button:hover {
-    background-color: #41a833;
-}
-
 /* Tilføjet styling til logo */
 .logo img {
     max-width: 85px;
     height: auto;
     margin-left: 15px;
 }
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.pizza-box {
+    width: 250px; /* Juster bredden efter behov */
+    padding: 10px;
+    margin: 10px auto; /* Centrerer boksen vandret */
+    border: 2px solid black;
+    border-radius: 10px;
+    background-color: #fffbdd;
+    display: flex;
+    justify-content: space-between; /* Placerer elementerne jævnt mellemrumt */
+    align-items: center;
+}
+
+.pizza {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.pizza-info {
+    flex: 1;
+    padding-left: 10px; /* Juster afstanden fra billedet til teksten */
+    text-align: left;
+}
+
+.pizza img {
+    max-width: 100px;
+    height: auto;
+    padding-left: 30px;
+}
+
+.pizza .add-button {
+    font-size: 24px;
+    background-color: #fffbdd;
+    color: black;
+    border: none;
+    border-radius: 5px; /* Gør knappen mere firkantet */
+    width: 30px; /* Juster bredden */
+    height: 30px; /* Juster højden */
+    margin-right: 10px; /* Tilføj margin til højre */
+}
+
+
+
+
