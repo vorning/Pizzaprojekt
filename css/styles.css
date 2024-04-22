@@ -142,52 +142,207 @@ body {
     margin-left: 15px;
 }
 
-.container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
 
 .pizza-box {
-    width: 250px; /* Juster bredden efter behov */
+    width: 300px;
     padding: 10px;
-    margin: 10px auto; /* Centrerer boksen vandret */
-    border: 2px solid black;
+    margin: 10px auto;
+    border: 2px solid rgb(255, 255, 255);
     border-radius: 10px;
     background-color: #fffbdd;
     display: flex;
-    justify-content: space-between; /* Placerer elementerne jævnt mellemrumt */
+    justify-content: space-between;
     align-items: center;
+    margin-top: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.8);
+    flex-wrap: nowrap;
 }
 
 .pizza {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-}
-
-.pizza-info {
-    flex: 1;
-    padding-left: 10px; /* Juster afstanden fra billedet til teksten */
-    text-align: left;
 }
 
 .pizza img {
     max-width: 100px;
     height: auto;
-    padding-left: 30px;
+    margin-right: 10px;
 }
+
+
+
+
+.price {
+    padding-right: 110px;
+}
+
+.pizza-info {
+    flex: 1;
+    text-align: left;
+}
+
+
 
 .pizza .add-button {
     font-size: 24px;
-    background-color: #fffbdd;
-    color: black;
+    background-color: #B81328;
+    color: rgb(255, 255, 255);
     border: none;
     border-radius: 5px; /* Gør knappen mere firkantet */
     width: 30px; /* Juster bredden */
     height: 30px; /* Juster højden */
-    margin-right: 10px; /* Tilføj margin til højre */
+    padding: 1px; /* Tilføj padding for at justere størrelsen */
+}
+
+body.with-top-margin {
+    margin-top: 70px; /* Tilføj et mellemrum øverst på siden kun for sider med class "with-top-margin" */
+}
+
+.kurv {
+    width: 500px; /* Juster bredden efter behov */
+    padding: 10px;
+    margin: 10px auto; /* Centrerer boksen vandret */
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 10px;
+    background-color: #fffbdd;
+}
+
+/* Anden CSS kode */
+
+.cart-footer {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50%;
+    max-width: 600px; /* Tilføjet maksimal bredde */
+    background-color: #fff;
+    padding: 10px;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.cart-info {
+    display: flex;
+    align-items: center;
+}
+
+.cart-info .cart-count {
+    margin-right: 10px;
+}
+
+.view-cart-btn {
+    font-size: 16px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    font-family: "October";
+}
+
+.view-cart-btn:hover {
+    color: #B81328;
+}
+
+.cart-total {
+    margin-left: 10px;
+}
+
+.search-container {
+    text-align: center;
+}
+
+#search-input {
+    padding: 10px;
+    border: 2px solid #B81328;
+    border-radius: 5px;
+    margin-right: 5px;
+}
+
+#search-button {
+    padding: 10px 10px;
+    background-color: #ffffff;
+    color: #8B0A23;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#search-button:hover {
+    background-color: #8B0A23;
+}
+
+.text {
+    font-family: "October";
+}
+
+::placeholder {
+    color: rgb(75, 75, 75);
+    font-family: "October";
+  }
+
+  .cart-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.cart {
+    flex: 1;
+}
+
+.cart-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cart-button {
+    padding: 10px 20px;
+    margin: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.cart-button:hover {
+    background-color: #0056b3;
+}
+
+
+
+.checkout-button {
+    text-align: center;
+}
+
+.checkout-button button {
+    padding: 10px 20px;
+    background-color: #B81328;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.checkout-button button:hover {
+    background-color: #8B0A23;
 }
 
 

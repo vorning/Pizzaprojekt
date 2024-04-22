@@ -3,29 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Indkøbskurv</title>
+    <title>Kurv</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
 <header>
-    <!-- Headerindhold, f.eks. menu -->
+    <!-- Indsæt headerindhold her -->
 </header>
 
-<main>
-    <h2>Indkøbskurv</h2>
-    <div class="kurv-item">
-        <!-- Oversigt over valgte pizzaer og tilbehør -->
+<!-- HTML-markup for kurvens visning på den næste side -->
+<div class="cart-container">
+    <div class="cart">
+        <h2>Kurv</h2>
+        <ul id="cart-items"></ul>
+        <p>Total pris: <span id="cart-total">0</span> kr.</p>
     </div>
-    <!-- Knapper til at ændre antal og fjerne pizzaer/tilbehør -->
-    <button onclick="updateCart()">Opdater kurv</button>
-    <button onclick="emptyCart()">Tøm kurv</button>
-    <p>Total pris: 50,-</p>
-</main>
+</div>
 
 <footer>
-    <!-- Footerindhold, f.eks. kontaktinformation -->
+    <!-- Indsæt footerindhold her -->
 </footer>
 
+<script src="js/cart.js"></script> <!-- Tilføj reference til cart.js -->
 </body>
 </html>
