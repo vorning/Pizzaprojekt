@@ -19,6 +19,17 @@ body {
     padding: 10px 20px;
     z-index: 3;
     font-family: "October Compressed H+L Heavy";
+}
+
+.menu-bar-main {
+    display: flex;
+    justify-content: flex-end;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 10px 20px;
+    z-index: 3;
+    font-family: "October Compressed H+L Heavy";
     position: fixed;
 }
 
@@ -75,6 +86,20 @@ body {
 
 .navbar ul li a:hover {
     color: #B81328;
+}
+
+.hero-section-login {
+    display: flex; /* Gør .hero-section til en flex container */
+    justify-content: center; /* Centrer indholdet vandret */
+    align-items: center; /* Centrer indholdet lodret */
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+
+.hero-section-login img {
+    max-width: 80%; /* Maksimal bredde af billedet, gør det mindre ved at reducere procentdelen */
+    height: auto; /* Bevarer billedets oprindelige proportioner */
 }
 
 .hero-section {
@@ -149,7 +174,7 @@ body {
     margin: 10px auto;
     border: 2px solid rgb(255, 255, 255);
     border-radius: 10px;
-    background-color: #fffbdd;
+    background-color: #ffffff;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -205,6 +230,12 @@ body.with-top-margin {
     border: 2px solid rgb(255, 255, 255);
     border-radius: 10px;
     background-color: #fffbdd;
+}
+
+.kurven {
+    display: flex;
+    justify-content: center;
+
 }
 
 /* Anden CSS kode */
@@ -326,6 +357,18 @@ body.with-top-margin {
     background-color: #0056b3;
 }
 
+.empty-cart {
+    font-size: 10px;
+    background-color: #B81328;
+    color: rgb(255, 255, 255);
+    border: none;
+    border-radius: 5px; /* Gør knappen mere firkantet */
+    width: 50px; /* Juster bredden */
+    height: 30px; /* Juster højden */
+    padding: 1px; /* Tilføj padding for at justere størrelsen */
+    font-family: October;
+}
+
 
 
 .checkout-button {
@@ -344,6 +387,118 @@ body.with-top-margin {
 .checkout-button button:hover {
     background-color: #8B0A23;
 }
+
+
+.login-container {
+    width: 300px;
+    padding: 10px;
+    margin: 10px auto;
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 10px;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.8);
+}
+
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.form-actions {
+    text-align: center;
+}
+
+.form-actions button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    font-family: "October";
+}
+
+.form-actions button:hover {
+    background-color: #0056b3;
+}
+
+
+.signup-container {
+    width: 300px;
+    padding: 10px;
+    margin: 10px auto;
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 10px;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+}
+
+.signup-form h2 {
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input, .form-group .form-checkbox label {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.form-checkbox {
+    display: flex;
+    align-items: center;
+}
+
+.form-checkbox input {
+    width: auto;
+    margin-right: 10px;
+}
+
+.form-actions {
+    text-align: center;
+}
+
+.form-actions button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+}
+
+.form-actions button:hover {
+    background-color: #0056b3;
+}
+
 
 
 

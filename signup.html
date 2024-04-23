@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Side</title>
+    <link rel="stylesheet" href="css/styles.css">
+    
+</head>
+
+<body>
+
+    <div class="logo">
+        <a href="index.html"><img src="/img/logo.png" alt="Logo"></a>
+    </div>
+
+    <header>
+        <div class="menu-bar">
+            <div class="menu-btn" onclick="toggleMenu()">&#9776;</div>
+            <nav class="navbar" id="navbar">
+                <ul>
+                    <li><a href="index.html">Hjem</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="login.html">Konto</a></li>
+                    <li><a href="#">Om os</a></li>
+                    <li><a href="#">Kontakt</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="signup-container">
+        <form class="signup-form">
+            <h2>Opret Bruger</h2>
+            
+            <div class="form-group">
+                <label for="firstname">Fornavn:</label>
+                <input type="text" id="firstname" name="firstname" required>
+            </div>
+    
+            <div class="form-group">
+                <label for="lastname">Efternavn:</label>
+                <input type="text" id="lastname" name="lastname" required>
+            </div>
+    
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+    
+            <div class="form-group">
+                <label for="phone">Telefon Nummer:</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+    
+            <div class="form-group">
+                <label for="password">Adgangskode:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+    
+            <div class="form-group">
+                <label for="confirm-password">Gentag Adgangskode:</label>
+                <input type="password" id="confirm-password" name="confirm-password" required>
+            </div>
+    
+            <div class="form-group form-checkbox">
+                <input type="checkbox" id="agree-rules" name="agree-rules" required>
+                <label for="agree-rules">Jeg har læst og accepterer reglerne</label>
+            </div>
+    
+            <div class="form-actions">
+                <button type="submit" onclick="location.href='/menu.html'">Opret Bruger</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="js/script.js"></script>
+    
+</body>
+</html>

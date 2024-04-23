@@ -1,134 +1,127 @@
-// Opret en variabel til at holde styr på produkterne i kurven
 let cart = [];
 
-// Tilføj event listener til at sikre, at koden kun kører, når DOM'en er klar
-document.addEventListener('DOMContentLoaded', function() {
-    // Kald funktionen til at indlæse kurven fra localStorage når siden indlæses
+document.addEventListener('DOMContentLoaded', () => {
     loadCartFromStorage();
+    updateCartView();
+    document.getElementById('empty-cart-btn').addEventListener('click', emptyCart);
+    updateFooterCartInfo(); // Tilføj denne linje
 
-    // Kald funktionen til at opdatere visningen af kurven på ordresiden
-    updateCartViewOnOrderPage();
+    // Event listeners for tilføjelse/fjernelse af produkter
+    document.querySelectorAll('.add-button').forEach(button => {
+        button.addEventListener('click', () => {
+            const name = button.getAttribute('data-name');
+            const price = parseInt(button.getAttribute('data-price'), 10);
+            addToCart(name, price);
+        });
+    });
 });
 
 // Funktion til at indlæse kurven fra localStorage
 function loadCartFromStorage() {
-    let savedCart = localStorage.getItem('cart');
-    if (savedCart) {
-        cart = JSON.parse(savedCart);
-    }
+    const savedCart = localStorage.getItem('cart');
+    cart = savedCart ? JSON.parse(savedCart) : [];
+    updateCartCount(); // Denne funktion bliver kaldt for at sikre, at antallet opdateres ved indlæsning
 }
 
-// Funktion til at opdatere visningen af kurven på menu-siden
+// Funktion til at gemme den aktuelle kurv til localStorage
+function saveCartToStorage() {
+    localStorage.setItem('cart', JSON.stringify(cart));
+    updateFooterCartInfo(); // Opdaterer info i footeren hver gang kurven ændres
+}
+
+// Funktion til at opdatere visningen af kurven
 function updateCartView() {
-    let cartCount = document.getElementById('cart-count');
-    let cartTotal = document.getElementById('cart-total');
-    let totalCount = 0;
+    cleanCart(); // Rens kurven for eventuelle ugyldige produkter
+    const cartItemsContainer = document.getElementById('cart-items');
+    const cartTotalElement = document.getElementById('cart-total');
     let totalCost = 0;
 
-    // Loop gennem hvert produkt i kurven for at opdatere antallet og den samlede pris
+    // Ryd eksisterende indhold
+    cartItemsContainer.innerHTML = '';
+
+    // Genopret kurvens indhold
     cart.forEach(product => {
-        totalCount += product.quantity;
-        totalCost += product.totalPrice;
+        const itemElement = document.createElement('li');
+        itemElement.innerHTML = `
+            ${product.name} - Pris: ${product.price} kr. 
+            <button class="remove-button" data-name="${product.name}">-</button>
+            <span class="quantity" data-name="${product.name}">${product.quantity}</span>
+            <button class="add-button" data-name="${product.name}" data-price="${product.price}">+</button>
+        `;
+        cartItemsContainer.appendChild(itemElement);
+        totalCost += product.price * product.quantity;
     });
 
-    // Opdater HTML-elementer med oplysninger om kurven
-    cartCount.textContent = totalCount;
-    cartTotal.textContent = totalCost;
+    // Opdater den samlede pris
+    cartTotalElement.textContent = `${totalCost} kr.`;
 }
 
-// Funktion til at tilføje produkt til kurven
+function updateCartCount() {
+    // Denne funktion er god til at opdatere antallet af varer i kurven på alle sider
+    const totalCount = cart.reduce((total, product) => total + product.quantity, 0);
+    const cartCountElements = document.querySelectorAll('.cart-count');
+    cartCountElements.forEach(element => element.textContent = totalCount);
+}
+
+function updateFooterCartInfo() {
+    // Ny funktion til at opdatere kurvens info i footeren
+    updateCartCount(); // Opdaterer det samlede antal varer i kurven
+    const totalCost = cart.reduce((total, product) => total + (product.price * product.quantity), 0);
+    const cartTotalElements = document.querySelectorAll('.cart-total');
+    cartTotalElements.forEach(element => element.textContent = `Total: ${totalCost} kr.`);
+}
+
+// Funktion til at tilføje et produkt til kurven
 function addToCart(name, price) {
-    let existingProduct = cart.find(product => product.name === name);
-
-    if (existingProduct) {
-        // Hvis produktet allerede findes, opdater antallet og den samlede pris
-        existingProduct.quantity++;
-        existingProduct.totalPrice += price;
+    const productIndex = cart.findIndex(product => product.name === name);
+    if (productIndex !== -1) {
+        cart[productIndex].quantity += 1;
     } else {
-        // Hvis produktet ikke findes, tilføj det til kurven
-        cart.push({
-            name: name,
-            price: price,
-            quantity: 1,
-            totalPrice: price
-        });
+        cart.push({ name, price, quantity: 1 });
     }
-
-    // Gem kurven i localStorage og opdater visningen af kurven på menu-siden
-    localStorage.setItem('cart', JSON.stringify(cart));
+    saveCartToStorage();
     updateCartView();
 }
 
-// Kald funktionen til at indlæse kurven fra localStorage når siden indlæses
-loadCartFromStorage();
-
-// Funktion til at opdatere visningen af kurven på ordresiden
-function updateCartViewOnOrderPage() {
-    let cartItemsContainer = document.getElementById('cart-items');
-    let cartTotalElement = document.getElementById('cart-total');
-    let cartTotal = 0;
-
-    // Ryd tidligere kurvens indhold
-    cartItemsContainer.innerHTML = '';
-
-    // Loop gennem hvert produkt i kurven for at opdatere visningen
-    cart.forEach(product => {
-        let itemElement = document.createElement('li');
-        itemElement.textContent = `${product.name} - Antal: ${product.quantity} - Pris: ${product.totalPrice} kr.`;
-
-        // Opret knapper til at fjerne og tilføje flere af produktet
-        let removeButton = document.createElement('button');
-        removeButton.textContent = '-';
-        removeButton.addEventListener('click', () => removeOneFromCart(product.name)); // Tilføj event listener til fjern-knappen
-        itemElement.appendChild(removeButton);
-
-        let addButton = document.createElement('button');
-        addButton.textContent = '+';
-        addButton.addEventListener('click', () => addOneToCart(product.name)); // Tilføj event listener til tilføj-knappen
-        itemElement.appendChild(addButton);
-
-        cartItemsContainer.appendChild(itemElement);
-
-        // Opdater den samlede pris
-        cartTotal += product.totalPrice;
-    });
-
-    // Opdater den samlede pris på siden
-    cartTotalElement.textContent = cartTotal;
-}
-
-// Kald funktionen til at opdatere visningen af kurven på ordresiden
-updateCartViewOnOrderPage();
-
-// Funktion til at fjerne et styk af det valgte produkt fra kurven
+// Funktion til at fjerne et produkt fra kurven
 function removeOneFromCart(name) {
-    let productIndex = cart.findIndex(product => product.name === name);
-
+    const productIndex = cart.findIndex(product => product.name === name);
     if (productIndex !== -1) {
-        if (cart[productIndex].quantity === 1) {
-            cart.splice(productIndex, 1); // Fjern produktet fra kurven, hvis der kun er én tilbage
-        } else {
-            cart[productIndex].quantity--; // Reducér antallet af produktet med én
-            cart[productIndex].totalPrice -= cart[productIndex].price; // Opdater den totale pris
+        cart[productIndex].quantity -= 1;
+        if (cart[productIndex].quantity <= 0) {
+            cart.splice(productIndex, 1);
         }
-
-        // Gem kurven i localStorage og opdater visningen af kurven
-        localStorage.setItem('cart', JSON.stringify(cart));
-        updateCartView();
     }
+    saveCartToStorage();
+    updateCartView();
 }
 
+// Tilføj event listeners
+document.addEventListener('DOMContentLoaded', () => {
+    loadCartFromStorage();
+    updateCartView();
 
-// Funktion til at tilføje et styk af det valgte produkt til kurven
-function addOneToCart(name) {
-    let productIndex = cart.findIndex(product => product.name === name);
+    document.getElementById('cart-items').addEventListener('click', event => {
+        const target = event.target;
+        const name = target.dataset.name;
+        const price = parseInt(target.dataset.price, 10);
 
-    if (productIndex !== -1) {
-        cart[productIndex].quantity++; // Tilføj én til antallet af produktet
-        cart[productIndex].totalPrice += cart[productIndex].price; // Opdater den totale pris
+        if (target.matches('.add-button')) {
+            addToCart(name, price);
+        } else if (target.matches('.remove-button')) {
+            removeOneFromCart(name);
+        }
+    });
+});
 
-        // Gem kurven i localStorage og opdater visningen af kurven
-        localStorage.setItem('cart', JSON.stringify(cart));
-        updateCartView();
-    }
+function cleanCart() {
+    cart = cart.filter(product => product.name && product.price > 0);
+    saveCartToStorage();
+}
+
+function emptyCart() {
+    cart = []; // Sætter kurven til en tom liste
+    saveCartToStorage();
+    updateCartView(); // Opdaterer kurvens visning
+    updateFooterCartInfo(); // Opdaterer kurvens info i footeren, hvis nødvendigt
 }
