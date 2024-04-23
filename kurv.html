@@ -1,43 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Kurv</title>
-    <link rel="stylesheet" href="css/styles.css">
-</head>
-<body>
-
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
     <div class="logo">
-        <a href="index.html"><img src="/img/logo.png" alt="Logo"></a>
+      <a href="index.html"><img src="/img/logo.png" alt="Logo" /></a>
     </div>
 
     <header>
-        <h2 class="kurven">Din Kurv</h2>
-        <div class="menu-bar">
-            <div class="menu-btn" onclick="toggleMenu()">&#9776;</div>
-            <nav class="navbar" id="navbar">
-                <ul>
-                    <li><a href="index.html">Hjem</a></li>
-                    <li><a href="menu.html">Menu</a></li>
-                    <li><a href="login.html">Konto</a></li>
-                    <li><a href="#">Om os</a></li>
-                    <li><a href="#">Kontakt</a></li>
-                </ul>
-            </nav>
-        </div>
+      <h2 class="kurven">Din Kurv</h2>
+      <div class="menu-bar">
+        <div class="menu-btn" onclick="toggleMenu()">&#9776;</div>
+        <nav class="navbar" id="navbar">
+          <ul>
+            <li><a href="index.html">Hjem</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="login.html">Konto</a></li>
+            <li><a href="om.html">Om os</a></li>
+          </ul>
+        </nav>
+      </div>
     </header>
 
-<div class="pizza-box">
-    <div class="cart">
+    <div class="pizza-box">
+      <div class="cart">
         <ul id="cart-items"></ul>
         <p>Total Antal: <span class="cart-count">0</span></p>
         <p>Total pris: <span id="cart-total">0</span></p>
         <button class="empty-cart" id="empty-cart-btn">Tøm Kurv</button>
+      </div>
     </div>
-</div>
 
-<script src="js/script.js"></script>
-<script src="js/cart.js"></script>
-</body>
+    <script src="js/script.js"></script>
+    <script src="js/cart.js"></script>
+  </body>
 </html>

@@ -1,45 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pizza Pizzeria</title>
-    <link rel="stylesheet" href="css/styles.css">
-</head>
-<body>
-
-<header>
-    <div class="menu-bar-main">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Picollo Pizzeria</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <header>
+      <div class="menu-bar-main">
         <div class="menu-btn" onclick="toggleMenu()">&#9776;</div>
         <nav class="navbar" id="navbar">
-            <ul>
-                <li><a href="index.html">Hjem</a></li>
-                <li><a href="menu.html">Menu</a></li>
-                <li><a href="login.html">Konto</a></li>
-                <li><a href="#">Om os</a></li>
-                <li><a href="#">Kontakt</a></li>
-            </ul>
+          <ul>
+            <li><a href="index.html">Hjem</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="login.html">Konto</a></li>
+            <li><a href="om.html">Om os</a></li>
+          </ul>
         </nav>
+      </div>
+    </header>
+
+    <div class="hero-section">
+      <img src="img/baggrund.png" alt="Billede" />
     </div>
-</header>
 
-<div class="hero-section">
-    <img src="img/baggrund.png" alt="Billede">
-</div>
+    <div class="order-btn">
+      <button onclick="window.location.href='/menu.html'">Bestil Pizza</button>
+    </div>
 
-<div class="order-btn">
-    <a href="menu.html"><button>Bestil Pizza</button></a>
-</div>
-
-<footer class="footer">
-    <div class="contact-info">
-        <p>Telefon: 12345678</p>
-        <p>Email: info@example.com</p>
-        <p>Adresse: 123 Pizza Street, Pizza Town</p>
+    <footer class="footer">
+      <div class="contact-info">
+        <p>Telefon: <a href="tel:+4512345678">+45 1234 5678</a></p>
+        <p>
+          Email:
+          <a href="mailto:kontakt@piccolopizza.dk">kontakt@piccolopizza.dk</a>
+        </p>
+        <p>Adresse: Hovedgaden 123, 8660 Skanderborg, Danmark</p>
         <p>Åbningstider: Mandag til lørdag kl. 10-22</p>
-    </div>
-</footer>
+      </div>
+    </footer>
 
-<script src="js/script.js"></script>
-</body>
+    <script src="js/script.js"></script>
+  </body>
 </html>
